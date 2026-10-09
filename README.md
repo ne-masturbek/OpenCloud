@@ -2,21 +2,24 @@
 
 OpenCloud is a terminal-based SoundCloud audio downloader built with Python and Textual.
 
-## Screenshot
+Download audio in multiple formats directly from your terminal.
 
-<img width="1192" height="868" alt="{A72CA3B6-9899-428B-803C-32FDABBA513A}" src="https://github.com/user-attachments/assets/f188824a-4a56-4c77-a388-d2fa17e5c88d" />
+## Screenshots
+
+<img width="1192" height="868" alt="OpenCloud interface" src="https://github.com/user-attachments/assets/f188824a-4a56-4c77-a388-d2fa17e5c88d" />
 
 ---
 
-<img width="1189" height="870" alt="{84E9D069-CAFE-4B04-B3C1-DBCA5D7ABBAA}" src="https://github.com/user-attachments/assets/8b7b2873-1b36-467b-8b5d-0eb3d83817aa" />
+<img width="1189" height="870" alt="OpenCloud download interface" src="https://github.com/user-attachments/assets/8b7b2873-1b36-467b-8b5d-0eb3d83817aa" />
 
 ## Features
 
-- Download audio from SoundCloud using a URL
+- Download SoundCloud audio using a URL
 - Supported formats: MP3, OGG, OPUS, FLAC, WAV, M4A, AAC
 - Custom download directory
 - Real-time download progress
 - Activity and error logs
+- Terminal-based interface
 
 ## Installation
 
@@ -24,43 +27,51 @@ OpenCloud is a terminal-based SoundCloud audio downloader built with Python and 
 - Python 3.10+
 - Git
 - FFmpeg
+- pipx
 
-**1. Clone the repository**
+### 1. Install pipx
 
-```bash
-git clone https://github.com/USERNAME/OpenCloud.git
-cd OpenCloud
+Windows (PowerShell):
+
+```powershell
+py -m pip install --user pipx
+py -m pipx ensurepath
 ```
 
-**2. Install dependencies**
+Restart PowerShell after installation.
 
-```bash
-pip install -r requirements.txt
-```
-
-**3. Install FFmpeg**
+### 2. Install FFmpeg
 
 Windows:
+
 ```powershell
 winget install Gyan.FFmpeg
 ```
 
 Linux (Ubuntu/Debian):
+
 ```bash
 sudo apt install ffmpeg
 ```
 
 macOS:
+
 ```bash
 brew install ffmpeg
 ```
 
+### 3. Install OpenCloud
+
+```powershell
+pipx install git+https://github.com/ne-masturbek/OpenCloud.git
+```
+
 ## Usage
 
-Run the application:
+Launch OpenCloud from any terminal:
 
-```bash
-python main.py
+```powershell
+opencloud
 ```
 
 1. Paste a SoundCloud track URL.
@@ -68,7 +79,7 @@ python main.py
 3. Choose a download directory.
 4. Click **Download**.
 
-Files are saved to the `Downloads` folder by default.
+Downloaded files are saved to the `Downloads` folder by default.
 
 ## Keyboard Shortcuts
 
@@ -78,6 +89,18 @@ Files are saved to the `Downloads` folder by default.
 | `Ctrl+L` | Clear logs |
 | `Ctrl+Q` | Exit |
 
+## Update
+
+```powershell
+pipx upgrade opencloud-tui
+```
+
+## Uninstall
+
+```powershell
+pipx uninstall opencloud-tui
+```
+
 ## Dependencies
 
 - [Textual](https://github.com/Textualize/textual)
@@ -86,4 +109,4 @@ Files are saved to the `Downloads` folder by default.
 
 ## Disclaimer
 
-OpenCloud is an unofficial project and is not affiliated with SoundCloud. Only download audio you have permission to use.
+OpenCloud is an unofficial project and is not affiliated with SoundCloud. Only download audio you have permission to download.
